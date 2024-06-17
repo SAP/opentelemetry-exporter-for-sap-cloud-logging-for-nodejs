@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "rootDir": "src",
+    "target": "es2017",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**"
+  ],
+  "compileOnSave": true
+}
