@@ -11,7 +11,7 @@ var otelOutputPlugin = new OpenTelemetryLogsOutputPlugin()
 // Optionally set whether additional log fields should be included as log attributes. Default: include custom fields only.
 otelOutputPlugin.setIncludeFieldsAsAttributes(FieldInclusionMode.CustomFieldsOnly)
 
-// Set OutputPlugin for cf-nodejs-logging-support
+// Add OpenTelemetry output plugin for cf-nodejs-logging-support
 log.addOutputPlugin(otelOutputPlugin)
 
 // Set the minimum logging level (Levels: off, error, warn, info, verbose, debug, silly)

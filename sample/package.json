@@ -19,7 +19,7 @@
     "@opentelemetry/sdk-logs": "^0.52.1",
     "@opentelemetry/sdk-metrics": "^1.25.1",
     "@opentelemetry/sdk-node": "^0.52.1",
-    "cf-nodejs-logging-support": "^7.3.0",
+    "cf-nodejs-logging-support": "^7.4.0-beta.4",
     "express": "^4.19.2",
     "opentelemetry-exporter-for-sap-cloud-logging": "git+https://github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs"
   },
