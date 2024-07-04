@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: opentelemetry-exporters-for-cloud-logging-sample
+  - name: opentelemetry-exporter-for-sap-cloud-logging-sample
     command: npm run start
     memory: 256m
     disk: 128m
