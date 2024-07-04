@@ -4,7 +4,7 @@
 
 ## About this project
 
-OpenTelemetry exporter for SAP Cloud Logging is a Node.js package providing a set of auto-configured OpenTelemetry exporters for shipping logs, metrics and traces to SAP Cloud Logging.
+OpenTelemetry exporter for SAP Cloud Logging is a Node.js package providing a set of auto-configured OpenTelemetry exporters for shipping logs, metrics and traces to [SAP Cloud Logging](https://discovery-center.cloud.sap/serviceCatalog/cloud-logging).
 
 ## Requirements and Setup
 
@@ -14,7 +14,7 @@ Add the package to your project as follows: (not published yet!)
 npm i opentelemetry-exporter-for-sap-cloud-logging
 ```
 
-Checkout our sample app for details on how to add the provided exporters for logs, metrics and traces to your OpenTelemetry instrumented application.
+Check out our [sample app](sample) for details on how to add the provided exporters for logs, metrics and traces to your OpenTelemetry instrumented application.
 More details and documentation pages are coming soon.
 
 ## Support, Feedback, Contributing
