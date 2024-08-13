@@ -1,7 +1,7 @@
 import { NodeSDK } from '@opentelemetry/sdk-node'
 import { PeriodicExportingMetricReader } from "@opentelemetry/sdk-metrics"
 import { BatchLogRecordProcessor, ConsoleLogRecordExporter } from '@opentelemetry/sdk-logs'
-import { AutoCloudLoggingLogsExporter, AutoCloudLoggingMetricsExporter, AutoCloudLoggingSpanExporter, CFApplicationDetector } from "opentelemetry-exporter-for-sap-cloud-logging"
+import { AutoCloudLoggingLogsExporter, AutoCloudLoggingMetricsExporter, AutoCloudLoggingSpanExporter, CFApplicationDetector } from "@sap/opentelemetry-exporter-for-sap-cloud-logging"
 import { HttpInstrumentation } from "@opentelemetry/instrumentation-http"
 import { ExpressInstrumentation } from "@opentelemetry/instrumentation-express"
 import { diag, DiagConsoleLogger, DiagLogLevel } from '@opentelemetry/api'
