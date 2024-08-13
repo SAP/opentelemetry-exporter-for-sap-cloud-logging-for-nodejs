@@ -1,3 +1,4 @@
+[![Version npm](https://img.shields.io/npm/v/@sap/opentelemetry-exporter-for-sap-cloud-logging.svg)](https://www.npmjs.com/package/@sap/opentelemetry-exporter-for-sap-cloud-logging)
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs)](https://api.reuse.software/info/github.com/SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs)
 
 # OpenTelemetry exporter for SAP Cloud Logging for Node.js
