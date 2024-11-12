@@ -4,7 +4,6 @@
   "description": "OpenTelemetry instrumented sample application demonstrating the features of the 'OpenTelemetry exporter for SAP Cloud Logging for Node.js' package.",
   "main": "app.js",
   "scripts": {
-    "prepare": "tsc",
     "build": "tsc",
     "start": "node --require ./build/instrumentation.js ./build/app.js"
   },
