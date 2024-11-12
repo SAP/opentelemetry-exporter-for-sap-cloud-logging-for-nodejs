@@ -13,7 +13,9 @@ const sdk = new NodeSDK({
   metricReader: new PeriodicExportingMetricReader({
     exporter: new AutoCloudLoggingMetricsExporter()
   }),
-  logRecordProcessor: new BatchLogRecordProcessor(new AutoCloudLoggingLogsExporter()),
+  logRecordProcessors: [
+    new BatchLogRecordProcessor(new AutoCloudLoggingLogsExporter())
+  ],
   instrumentations: [
     new HttpInstrumentation(),
     new ExpressInstrumentation()
