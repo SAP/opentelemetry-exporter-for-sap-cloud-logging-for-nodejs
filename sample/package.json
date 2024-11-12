@@ -1,6 +1,6 @@
 {
   "name": "opentelemetry-exporter-for-sap-cloud-logging-sample",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "OpenTelemetry instrumented sample application demonstrating the features of the 'OpenTelemetry exporter for SAP Cloud Logging for Node.js' package.",
   "main": "app.js",
   "scripts": {
