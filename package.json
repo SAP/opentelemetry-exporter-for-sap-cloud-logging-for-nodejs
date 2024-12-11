@@ -1,6 +1,6 @@
 {
   "name": "@sap/opentelemetry-exporter-for-sap-cloud-logging",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A set of auto-configured OpenTelemetry exporters for SAP Cloud Logging",
   "main": "build/index.js",
   "types": "build/index.d.ts",
