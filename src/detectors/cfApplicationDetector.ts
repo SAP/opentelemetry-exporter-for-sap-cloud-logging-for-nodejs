@@ -1,9 +1,8 @@
-import { Attributes } from '@opentelemetry/api';
-import { DetectorSync, IResource, ResourceDetectionConfig, Resource } from '@opentelemetry/resources';
+import { ResourceDetector, ResourceDetectionConfig, DetectedResource, DetectedResourceAttributes } from '@opentelemetry/resources';
 import { ApplicationProvider } from '../cf/applicationProvider';
 
-export class CFApplicationDetector implements DetectorSync {
-    attributes: Attributes;
+export class CFApplicationDetector implements ResourceDetector {
+    attributes: DetectedResourceAttributes;
 
     constructor() {
         let provider = new ApplicationProvider()
@@ -28,7 +27,7 @@ export class CFApplicationDetector implements DetectorSync {
         }
     }
 
-    detect(config?: ResourceDetectionConfig | undefined): IResource {
-        return new Resource(this.attributes);
+    detect(_config?: ResourceDetectionConfig): DetectedResource {
+        return { attributes: this.attributes }
     }
 }
