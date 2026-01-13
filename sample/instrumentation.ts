@@ -10,9 +10,11 @@ diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO)
 
 const sdk = new NodeSDK({
   traceExporter: new AutoCloudLoggingSpanExporter(),
-  metricReader: new PeriodicExportingMetricReader({
-    exporter: new AutoCloudLoggingMetricsExporter()
-  }),
+  metricReaders: [
+    new PeriodicExportingMetricReader({
+      exporter: new AutoCloudLoggingMetricsExporter()
+    })
+  ],
   logRecordProcessors: [
     new BatchLogRecordProcessor(new AutoCloudLoggingLogsExporter())
   ],
