@@ -20,9 +20,9 @@
     "@opentelemetry/sdk-metrics": "^2.2.0",
     "@opentelemetry/sdk-node": "^0.208.0",
     "@sap/opentelemetry-exporter-for-sap-cloud-logging": "0.5.0",
-    "cf-nodejs-logging-support": "^7.5.2-beta.1",
+    "cf-nodejs-logging-support": "^7.5.3-beta.0",
     "express": "^5.2.1"
-    },
+  },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^25.0.7",
