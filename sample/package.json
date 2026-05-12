@@ -1,6 +1,6 @@
 {
   "name": "opentelemetry-exporter-for-sap-cloud-logging-sample",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "OpenTelemetry instrumented sample application demonstrating the features of the 'OpenTelemetry exporter for SAP Cloud Logging for Node.js' package.",
   "main": "app.js",
   "scripts": {
@@ -14,13 +14,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@opentelemetry/api": "~1.9.0",
-    "@opentelemetry/instrumentation-express": "^0.57.1",
-    "@opentelemetry/instrumentation-http": "^0.208.0",
-    "@opentelemetry/sdk-logs": "^0.208.0",
-    "@opentelemetry/sdk-metrics": "^2.2.0",
-    "@opentelemetry/sdk-node": "^0.208.0",
-    "@sap/opentelemetry-exporter-for-sap-cloud-logging": "0.5.0",
-    "cf-nodejs-logging-support": "^7.5.3-beta.0",
+    "@opentelemetry/instrumentation-express": "^0.59.0",
+    "@opentelemetry/instrumentation-http": "^0.212.0",
+    "@opentelemetry/sdk-logs": "^0.212.0",
+    "@opentelemetry/sdk-metrics": "^2.5.1",
+    "@opentelemetry/sdk-node": "^0.212.0",
+    "@sap/opentelemetry-exporter-for-sap-cloud-logging": "0.6.0",
+    "cf-nodejs-logging-support": "^7.5.5-beta.1",
     "express": "^5.2.1"
   },
   "devDependencies": {
