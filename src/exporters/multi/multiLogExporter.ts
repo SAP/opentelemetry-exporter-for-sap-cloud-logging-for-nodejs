@@ -14,6 +14,23 @@ export abstract class MultiLogRecordExporter implements LogRecordExporter {
         })
     }
 
+    public async forceFlush(): Promise<void> {
+        const results = await Promise.allSettled(
+            this.logRecordExporters.map((exporter) => exporter.forceFlush())
+        )
+
+        const failures = results.filter(
+            (result): result is PromiseRejectedResult => result.status === "rejected"
+        )
+
+        if (failures.length > 0) {
+            for (const failure of failures) {
+                this.diagLogger.warn("Error returned by forceFlush.", failure.reason)
+            }
+            throw new Error(`forceFlush failed for ${failures.length} exporter(s).`)
+        }
+    }
+    
     public add(...exporters: LogRecordExporter[]) {
         this.logRecordExporters.push(...exporters)
     }
