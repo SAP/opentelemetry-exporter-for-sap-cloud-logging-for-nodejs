@@ -26,7 +26,8 @@ export class CloudLoggingCredentials {
         parsed.endpoint = credentials[CloudLoggingCredentials.CRED_OTLP_ENDPOINT]
         parsed.clientKey = Buffer.from(credentials[CloudLoggingCredentials.CRED_OTLP_CLIENT_KEY], "utf-8")
         parsed.clientCert = Buffer.from(credentials[CloudLoggingCredentials.CRED_OTLP_CLIENT_CERT], "utf-8")
-        parsed.serverCert = Buffer.from(credentials[CloudLoggingCredentials.CRED_OTLP_SERVER_CERT], "utf-8")
+        const rawServerCert = credentials[CloudLoggingCredentials.CRED_OTLP_SERVER_CERT]
+        parsed.serverCert = rawServerCert ? Buffer.from(rawServerCert, "utf-8") : undefined
 
         return parsed
     }
@@ -45,8 +46,7 @@ export class CloudLoggingCredentials {
             return false
         }
         if (this.isUndefinedOrEmpty(this.serverCert)) {
-            this.diagLogger.warn(`Credential "${CloudLoggingCredentials.CRED_OTLP_SERVER_CERT}" not found. Skipping cloud-logging exporter configuration.`)
-            return false
+            this.diagLogger.debug(`Credential "${CloudLoggingCredentials.CRED_OTLP_SERVER_CERT}" not present in service binding. Falling back to the Node.js default trust store for the ingest endpoint.`)
         }
         return true
     }
@@ -73,7 +73,7 @@ export class CloudLoggingCredentials {
         return this.clientCert!
     }
 
-    public getServerCert(): Buffer {
-        return this.serverCert!
+    public getServerCert(): Buffer | undefined {
+        return this.serverCert
     }
 }
