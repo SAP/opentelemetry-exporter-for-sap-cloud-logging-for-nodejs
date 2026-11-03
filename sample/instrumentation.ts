@@ -16,7 +16,7 @@ const sdk = new NodeSDK({
     })
   ],
   logRecordProcessors: [
-    new BatchLogRecordProcessor(new AutoCloudLoggingLogsExporter())
+    new BatchLogRecordProcessor({ exporter: new AutoCloudLoggingLogsExporter() })
   ],
   instrumentations: [
     new HttpInstrumentation(),
