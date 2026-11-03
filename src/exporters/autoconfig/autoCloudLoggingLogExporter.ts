@@ -2,7 +2,7 @@ import { CloudLoggingServiceBindingsProvider } from "../../cf/cloudLoggingServic
 import { MultiLogRecordExporter } from "../multi/multiLogExporter"
 import { CloudLoggingCredentials } from "../../cf/cloudLoggingCredentials"
 import { ServiceBinding } from "../../cf/serviceBinding"
-import { createSecureContext, rootCertificates } from 'tls'
+import { createSecureContext } from 'tls'
 import { credentials as grpcCredentials } from '@grpc/grpc-js'
 import { OTLPLogExporter } from "@opentelemetry/exporter-logs-otlp-grpc"
 import { LogRecordExporter } from "@opentelemetry/sdk-logs"
@@ -34,7 +34,7 @@ export class AutoCloudLoggingLogsExporter extends MultiLogRecordExporter {
         let secureContext = createSecureContext({
             cert: credentials.getClientCert(),
             key: credentials.getClientKey(),
-            ...(serverCert && { ca: [...rootCertificates, serverCert.toString('utf-8')] }),
+            ...(serverCert && { ca: serverCert }),
         })
 
         this.diagLogger.info(`Creating OTLP log exporter for service binding '${binding.getName()}' (${binding.getLabel()})`);
