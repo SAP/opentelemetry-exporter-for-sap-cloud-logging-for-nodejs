@@ -1,5 +1,5 @@
 import { ExportResult, ExportResultCode } from "@opentelemetry/core"
-import { SpanExporter, ReadableSpan } from "@opentelemetry/sdk-trace-base"
+import { SpanExporter, ReadableSpan } from "@opentelemetry/sdk-trace"
 import { diag, DiagLogger } from '@opentelemetry/api'
 
 export class MultiSpanExporter implements SpanExporter {

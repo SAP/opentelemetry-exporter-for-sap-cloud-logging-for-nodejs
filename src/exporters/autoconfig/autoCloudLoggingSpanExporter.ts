@@ -5,7 +5,7 @@ import { createSecureContext } from 'tls'
 import { MultiSpanExporter } from "../multi/multiSpanExporter"
 import { credentials as grpcCredentials } from '@grpc/grpc-js'
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
-import { SpanExporter } from "@opentelemetry/sdk-trace-base"
+import { SpanExporter } from "@opentelemetry/sdk-trace"
 
 export class AutoCloudLoggingSpanExporter extends MultiSpanExporter {
     public constructor(autoConfigExporters: Boolean = true) {
