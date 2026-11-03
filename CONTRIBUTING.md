@@ -31,6 +31,17 @@ The following rule governs code contributions:
 * Contributions must be licensed under the [Apache 2.0 License](./LICENSE)
 * Due to legal reasons, contributors will be asked to accept a Developer Certificate of Origin (DCO) when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
+## Running Tests
+
+Use Node.js 22 or newer for development:
+
+```sh
+npm ci
+npm test
+```
+
+`npm test` builds the TypeScript sources and runs the tests in `test/` with Node.js's built-in test runner. Tests cover credential validation, service-binding discovery, TLS trust selection, and multi-exporter routing and lifecycle behavior for logs, metrics, and spans without contacting external services. Environment changes and mocks are restored after each test.
+
 ## Issues and Planning
 
 * We use GitHub issues to track bugs and enhancement requests.

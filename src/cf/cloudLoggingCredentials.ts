@@ -23,10 +23,10 @@ export class CloudLoggingCredentials {
     public static parse(credentials: any): CloudLoggingCredentials {
         let parsed = new CloudLoggingCredentials()
 
-        parsed.endpoint = credentials[CloudLoggingCredentials.CRED_OTLP_ENDPOINT]
-        parsed.clientKey = Buffer.from(credentials[CloudLoggingCredentials.CRED_OTLP_CLIENT_KEY], "utf-8")
-        parsed.clientCert = Buffer.from(credentials[CloudLoggingCredentials.CRED_OTLP_CLIENT_CERT], "utf-8")
-        const rawServerCert = credentials[CloudLoggingCredentials.CRED_OTLP_SERVER_CERT]
+        parsed.endpoint = credentials?.[CloudLoggingCredentials.CRED_OTLP_ENDPOINT] ?? undefined
+        parsed.clientKey = Buffer.from(credentials?.[CloudLoggingCredentials.CRED_OTLP_CLIENT_KEY] ?? "", "utf-8")
+        parsed.clientCert = Buffer.from(credentials?.[CloudLoggingCredentials.CRED_OTLP_CLIENT_CERT] ?? "", "utf-8")
+        const rawServerCert = credentials?.[CloudLoggingCredentials.CRED_OTLP_SERVER_CERT]
         parsed.serverCert = rawServerCert ? Buffer.from(rawServerCert, "utf-8") : undefined
 
         return parsed
