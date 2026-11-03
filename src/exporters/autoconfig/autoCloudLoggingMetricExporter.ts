@@ -2,7 +2,7 @@ import { CloudLoggingServiceBindingsProvider } from "../../cf/cloudLoggingServic
 import { MultiMetricExporter } from "../multi/multiMetricExporter"
 import { ServiceBinding } from "../../cf/serviceBinding"
 import { CloudLoggingCredentials } from "../../cf/cloudLoggingCredentials"
-import { createSecureContext, rootCertificates } from 'tls'
+import { createSecureContext } from 'tls'
 import { credentials as grpcCredentials } from '@grpc/grpc-js'
 import { OTLPMetricExporter } from "@opentelemetry/exporter-metrics-otlp-grpc"
 import { PushMetricExporter } from "@opentelemetry/sdk-metrics"
@@ -34,7 +34,7 @@ export class AutoCloudLoggingMetricsExporter extends MultiMetricExporter {
         let secureContext = createSecureContext({
             cert: credentials.getClientCert(),
             key: credentials.getClientKey(),
-            ...(serverCert && { ca: [...rootCertificates, serverCert.toString('utf-8')] }),
+            ...(serverCert && { ca: serverCert }),
         })
 
         this.diagLogger.info(`Creating OTLP metrics exporter for service binding '${binding.getName()}' (${binding.getLabel()})`)

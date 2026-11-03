@@ -1,7 +1,7 @@
 import { CloudLoggingServiceBindingsProvider } from "../../cf/cloudLoggingServiceBindingsProvider"
 import { ServiceBinding } from "../../cf/serviceBinding"
 import { CloudLoggingCredentials } from "../../cf/cloudLoggingCredentials"
-import { createSecureContext, rootCertificates } from 'tls'
+import { createSecureContext } from 'tls'
 import { MultiSpanExporter } from "../multi/multiSpanExporter"
 import { credentials as grpcCredentials } from '@grpc/grpc-js'
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
@@ -34,7 +34,7 @@ export class AutoCloudLoggingSpanExporter extends MultiSpanExporter {
         let secureContext = createSecureContext({
             cert: credentials.getClientCert(),
             key: credentials.getClientKey(),
-            ...(serverCert && { ca: [...rootCertificates, serverCert.toString('utf-8')] }),
+            ...(serverCert && { ca: serverCert }),
         })
 
         this.diagLogger.info(`Creating OTLP span exporter for service binding '${binding.getName()}' (${binding.getLabel()})`)
