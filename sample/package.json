@@ -8,18 +8,18 @@
     "start": "node --require ./build/instrumentation.js ./build/app.js"
   },
   "engines": {
-    "node": ">=14.14"
+    "node": ">=22.15.0"
   },
   "author": "Christian Dinse",
   "license": "Apache-2.0",
   "dependencies": {
-    "@opentelemetry/api": "^1.9.1",
-    "@opentelemetry/instrumentation-express": "^0.65.0",
-    "@opentelemetry/instrumentation-http": "^0.218.0",
-    "@opentelemetry/sdk-logs": "^0.218.0",
-    "@opentelemetry/sdk-metrics": "^2.7.1",
-    "@opentelemetry/sdk-node": "^0.218.0",
-    "@sap/opentelemetry-exporter-for-sap-cloud-logging": "^0.7.0",
+    "@opentelemetry/api": "^1.10.0",
+    "@opentelemetry/instrumentation-express": "^0.72.0",
+    "@opentelemetry/instrumentation-http": "^0.300.0",
+    "@opentelemetry/sdk-logs": "^3.0.0",
+    "@opentelemetry/sdk-metrics": "^3.0.0",
+    "@opentelemetry/sdk-node": "^0.300.0",
+    "@sap/opentelemetry-exporter-for-sap-cloud-logging": "github:SAP/opentelemetry-exporter-for-sap-cloud-logging-for-nodejs#upd-otel-3",
     "cf-nodejs-logging-support": "^8.1.1",
     "express": "^5.2.1"
   },

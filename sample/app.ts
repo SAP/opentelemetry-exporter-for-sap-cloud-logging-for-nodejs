@@ -1,12 +1,12 @@
 import express from 'express'
 import log, { FieldInclusionMode, OpenTelemetryLogsOutputPlugin }  from 'cf-nodejs-logging-support'
+import { logs } from '@opentelemetry/api'
 
 const HTTP_PORT = Number(process.env.VCAP_APP_PORT || 3000)
 var app = express()
 
 // Create an instance of the OpenTelemetryLogsOutputPlugin. 
-// By default, it will use the global logger provider
-var otelOutputPlugin = new OpenTelemetryLogsOutputPlugin()
+var otelOutputPlugin = new OpenTelemetryLogsOutputPlugin(logs.getLoggerProvider())
 
 // Optionally set whether additional log fields should be included as log attributes. Default: include custom fields only.
 otelOutputPlugin.setIncludeFieldsAsAttributes(FieldInclusionMode.CustomFieldsOnly)
